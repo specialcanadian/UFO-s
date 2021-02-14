@@ -59,23 +59,18 @@ function updateFilters() {
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    // ------------------------------------------------------------------
+    let filtnames = ["datetime", "City", "State", "Country", "Shape"]
+    let datanames = ["datetime", "city", "state", "country", "shape"]
+    for (i = 0; i < 5; i++) {
+      
+      if (filter[filtnames[i]]) {
+        // Apply `filter` to the table data to only keep the
+        // rows where the `datetime` value matches the filter value
+        filteredData = filteredData.filter(row => row[datanames[i]] === filter[filtnames[i]]);
+    }
+    }
+    // -------------No for-loop method----------------------------------------------------- 
     /*
-    if (date) {
-      // Apply `filter` to the table data to only keep the
-      // rows where the `datetime` value matches the filter value
-      filteredData = filteredData.filter(row => row.datetime === date);
-    }
-    let filtnames = ["datetime", "city", "state", "country", "shape"]
-    
-    
-    if (filter[i]) {
-      // Apply `filter` to the table data to only keep the
-      // rows where the `datetime` value matches the filter value
-      filteredData = filteredData.filter(row => row[filtnames[i]] === filter[i]);
-    }
-    */
-
     if (filter["datetime"]) {
       // Apply `filter` to the table data to only keep the
       // rows where the `datetime` value matches the filter value
@@ -105,9 +100,8 @@ function updateFilters() {
       // rows where the `datetime` value matches the filter value
       filteredData = filteredData.filter(row => row.shape === filter["Shape"]);
     }
-    
-
-  // ---------------------------------------------------------------------
+    */
+    // ---------------------------------------------------------------------
     // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData)
   }
