@@ -7,7 +7,7 @@ The purpose of this project is to create a webpage which accesses a dataset of U
 As an example, you could use the Date filter to see all the UFO sightings in California. 
 The filters are located near the bottom of the page
 ![alt text](https://github.com/specialcanadian/UFO-s/blob/main/static/images/defaultPage.png)
-![alt text](https://github.com/specialcanadian/UFO-s/blob/main/static/images/defaultPage.png)
+![alt text](https://github.com/specialcanadian/UFO-s/blob/main/static/images/OneFilter.png)
 
 Multiple filters can also be applied at the same
 ![alt text](https://github.com/specialcanadian/UFO-s/blob/main/static/images/OneFilter.png)
