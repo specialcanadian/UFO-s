@@ -51,37 +51,66 @@ function updateFilters() {
   }
   
   // 7. Use this function to filter the table when data is entered.
+  
   function filterTable() {
   
     // 8. Set the filtered data to the tableData.
-    let filterData = tableData
+    let filteredData = tableData
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
     // ------------------------------------------------------------------
+    /*
     if (date) {
       // Apply `filter` to the table data to only keep the
       // rows where the `datetime` value matches the filter value
       filteredData = filteredData.filter(row => row.datetime === date);
     }
     let filtnames = ["datetime", "city", "state", "country", "shape"]
-
+    
+    
     if (filter[i]) {
       // Apply `filter` to the table data to only keep the
       // rows where the `datetime` value matches the filter value
       filteredData = filteredData.filter(row => row[filtnames[i]] === filter[i]);
     }
-    if (filter[1]) {
+    */
+
+    if (filter["datetime"]) {
       // Apply `filter` to the table data to only keep the
       // rows where the `datetime` value matches the filter value
-      filteredData = filteredData.filter(row => row.city === filter[1]);
+      filteredData = filteredData.filter(row => row.datetime === filter["datetime"]);
+    }
+    
+    if (filter["City"]) {
+      // Apply `filter` to the table data to only keep the
+      // rows where the `datetime` value matches the filter value
+      filteredData = filteredData.filter(row => row.city === filter["City"]);
     }
 
+    if (filter["State"]) {
+      // Apply `filter` to the table data to only keep the
+      // rows where the `datetime` value matches the filter value
+      filteredData = filteredData.filter(row => row.state === filter["State"]);
+    }
+
+    if (filter["Country"]) {
+      // Apply `filter` to the table data to only keep the
+      // rows where the `datetime` value matches the filter value
+      filteredData = filteredData.filter(row => row.country === filter["Country"]);
+    }
+
+    if (filter["Shape"]) {
+      // Apply `filter` to the table data to only keep the
+      // rows where the `datetime` value matches the filter value
+      filteredData = filteredData.filter(row => row.shape === filter["Shape"]);
+    }
+    
 
   // ---------------------------------------------------------------------
     // 10. Finally, rebuild the table using the filtered data
-    buildTable(filtData)
-  
+    buildTable(filteredData)
+  }
   
   // 2. Attach an event to listen for changes to each filter
   d3.selectAll("input").on("change", updateFilters);
